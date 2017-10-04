@@ -24,10 +24,14 @@ public class Result<ResultType> extends BaseResult {
      * @param result. The returning result of action
      */
     public Result(boolean isSuccess, String message, ResultType result) {
-        this.p_isSuccess = isSuccess;
-        this.p_message = message;
+        super(isSuccess, message);
         this.p_result = result;
     }
+    
+    /**
+     * Creates empty alias of Result entity
+     */
+    public Result() {}
 
     /**
      * Get the result of action

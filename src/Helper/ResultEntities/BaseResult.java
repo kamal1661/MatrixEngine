@@ -24,7 +24,7 @@ public class BaseResult {
      * @param isSuccess. Shows if the result action as successful
      * @param message. Shows the error message in case of unsuccessful action 
      */
-    public void BaseResult(boolean isSuccess, String message)
+    public BaseResult(boolean isSuccess, String message)
     {
         this.p_isSuccess = isSuccess;
         this.p_message = message;
@@ -33,7 +33,7 @@ public class BaseResult {
     /**
      * Creates empty alias of Result entity
      */
-    public void BaseResult() { 
+    public BaseResult() { 
     }
 
     /**

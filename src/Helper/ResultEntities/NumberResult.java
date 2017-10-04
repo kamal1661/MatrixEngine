@@ -20,4 +20,9 @@ public class NumberResult extends Result<Number> {
     public NumberResult(boolean isSuccess, String message, Number result) {
         super(isSuccess, message, result);
     }
+    
+    /**
+     * Creates empty alias of Result entity
+     */
+    public NumberResult() {}
 }
