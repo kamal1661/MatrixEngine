@@ -101,4 +101,71 @@ public class Matrix {
     public void setElements(List<MatrixElement> elements) {
         this.elements = elements;
     }       
+    
+    /**
+     * Get the element by its location
+     * @param rowIndex - the row index of the element to found
+     * @param columnIndex - the column index of the element to found
+     * @return the matrix element
+     */
+    public MatrixElement getElement(int rowIndex, int columnIndex) {
+        for (MatrixElement element : this.elements) {
+            if (rowIndex == element.getRowIndex() && columnIndex == element.getColumnIndex()) {
+                return element;
+            }
+        }   
+        
+        return null;
+    }
+    
+    /**
+     * Set the elements value by its location
+     * @param rowIndex - the row index of the element to be altered
+     * @param columnIndex - the column index of the element to be altered
+     * @param value - the new value of the element
+     * @return the success of action
+     */
+    public boolean setElement(int rowIndex, int columnIndex, Number value) {
+        boolean isSuccess = false;
+        if((rowIndex <= this.rowCount) && (columnIndex <= this.columnCount)){
+            for (MatrixElement element : this.elements) {
+                if (rowIndex == element.getRowIndex() && columnIndex == element.getColumnIndex()) {
+                    element.setValue(value);
+                    isSuccess = true;
+                    break;
+                }      
+            }
+        }
+        
+        return isSuccess;
+    }
+    
+    /**
+     * Set the elements value
+     * @param element - the element to be altered with new value
+     * @return the success of action
+     */
+    public boolean setElement(MatrixElement element) {
+        return this.setElement(element.getRowIndex(), element.getColumnIndex(), element.getValue());
+    }
+    
+    /**
+     * Set the elements value to zero by its location
+     * @param rowIndex - the row index of the element to be altered
+     * @param columnIndex - the column index of the element to be altered
+     * @return the success of action
+     */
+    public boolean setZeroElement(int rowIndex, int columnIndex) {
+        return this.setElement(rowIndex, columnIndex, 0);
+
+    }
+    
+    /**
+     * Set the elements value to zero
+     * @param element - the element to be altered
+     * @return the success of action
+     */
+    public boolean setZeroElement(MatrixElement element) {
+        return this.setElement(element.getRowIndex(), element.getColumnIndex(), 0);
+    }
 }
