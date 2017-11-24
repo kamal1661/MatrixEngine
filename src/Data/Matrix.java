@@ -9,10 +9,22 @@ import java.util.List;
 /**
  * Entity that represents the Matrix
  * @author Rodrigo Diaz M.
+ * @author AlekseyKachan
  */
 public class Matrix {
+    /*
+     * The amount of rows in the matrix
+     */
     private int rowCount;
+    
+    /*
+     * The amount of columns in the matrix
+     */
     private int columnCount;
+    
+    /*
+     * List of the elements of the matrix
+     */
     private List<MatrixElement> elements;
 
     /**
@@ -21,7 +33,7 @@ public class Matrix {
     public Matrix() {}
     
     /**
-     * Creates alias of Matrix entity with  2 fields:
+     * Creates alias of Matrix entity with 2 fields:
      * @param rowCount
      * @param columnCount
      */
@@ -31,7 +43,7 @@ public class Matrix {
     }
     
     /**
-     * Creates alias of Matrix entity with  3 fields:
+     * Creates alias of Matrix entity with 3 fields:
      * @param rowCount
      * @param columnCount
      * @param elements
@@ -43,48 +55,48 @@ public class Matrix {
     }
     
     /**
-     * Get the result of action
-     * @return as the result of action
+     * Get the amount of rows in matrix
+     * @return the amount of rows in matrix
      */
     public int getRowCount() {
         return this.rowCount;    
     }
     
     /**
-     * Set the result of action
-     * @param rowCount as the result of action
+     * Set the amount of rows in matrix
+     * @param rowCount the amount of rows in matrix
      */
     public void setRowCount(int rowCount) {
         this.rowCount = rowCount;
     }
     
     /**
-     * Get the result of action
-     * @return as the result of action
+     * Get the amount of columns in matrix
+     * @return the amount of columns in matrix
      */
     public int getColumnCount() {
         return this.columnCount;
     }
     
     /**
-     * Set the result of action
-     * @param columnCount as the result of action
+     * Set the amount of columns in matrix
+     * @param columnCount the amount of columns in matrix
      */
     public void setColumnCount(int columnCount) {
         this.columnCount = columnCount;
     }
     
     /**
-     * Get the result of action
-     * @return as the result of action
+     * Get the list of the elements of the matrix
+     * @return the list of the elements of the matrix
      */
     public List<MatrixElement> getElements() {
         return this.elements;
     }
     
     /**
-     * Set the result of action
-     * @param elements as the result of action
+     * Set the list of the elements of the matrix
+     * @param elements the new list of the elements of the matrix
      */
     public void setElements(List<MatrixElement> elements) {
         this.elements = elements;

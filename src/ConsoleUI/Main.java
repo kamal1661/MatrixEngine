@@ -159,7 +159,7 @@ public class Main {
             case "6":
                 break;
             case "7":
-                processDecomposiionInput();            
+                processDecompositionInput();            
                 break;
             case "8":
                 break;
@@ -169,7 +169,7 @@ public class Main {
         }
     }
     
-    private static void processDecomposiionInput() {
+    private static void processDecompositionInput() {
         Scanner sc = new Scanner(System.in);
         displayMatrixDecompositionOptions();
         String option = sc.nextLine();

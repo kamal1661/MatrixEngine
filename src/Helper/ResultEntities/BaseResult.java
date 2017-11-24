@@ -11,13 +11,14 @@ package Helper.ResultEntities;
  */
 public class BaseResult {
     /*
-     * Shows if the result action as successful
+     * Shows if the result action is successful
      */
-    protected boolean p_isSuccess;
+    protected boolean isSuccess;
+    
     /*
      * Shows the error message in case of unsuccessful action
      */
-    protected String p_message; 
+    protected String message; 
     
     /**
      * Creates alias of Result entity with fields
@@ -26,8 +27,8 @@ public class BaseResult {
      */
     public BaseResult(boolean isSuccess, String message)
     {
-        this.p_isSuccess = isSuccess;
-        this.p_message = message;
+        this.isSuccess = isSuccess;
+        this.message = message;
     }
     
     /**
@@ -41,7 +42,7 @@ public class BaseResult {
      * @return boolean value of result
      */
     public boolean isSuccess() {
-        return p_isSuccess;
+        return this.isSuccess;
     }
 
     /**
@@ -49,7 +50,7 @@ public class BaseResult {
      * @param isSuccess. The success of action
      */
     public void setIsSuccess(boolean isSuccess) {
-        this.p_isSuccess = isSuccess;
+        this.isSuccess = isSuccess;
     }
 
     /**
@@ -57,7 +58,7 @@ public class BaseResult {
      * @return error string of action
      */
     public String getMessage() {
-        return p_message;
+        return this.message;
     }
 
     /**
@@ -65,6 +66,6 @@ public class BaseResult {
      * @param message. Error string of action
      */
     public void setMessage(String message) {
-        this.p_message = message;
+        this.message = message;
     }
 }

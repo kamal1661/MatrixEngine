@@ -8,10 +8,22 @@ package Data;
 /**
  * Entity that shows one Matrix element
  * @author Rodrigo Diaz M.
+ * @author AlekseyKachan
  */
 public class MatrixElement {
+    /*
+     * Row index of the matrix element
+     */
     private int rowIndex;
+    
+    /*
+     * Column index of the matrix element
+     */
     private int columnIndex;
+    
+    /*
+     * Value of the matrix element
+     */
     private Number value;
    
     /**
@@ -20,7 +32,7 @@ public class MatrixElement {
     public MatrixElement() {}
     
      /**
-     * Creates alias of Matrix entity with  2 fields:
+     * Creates alias of Matrix entity with 2 fields:
      * @param rowIndex
      * @param columnIndex
      */
@@ -30,7 +42,7 @@ public class MatrixElement {
     }
     
     /**
-     * Creates alias of Matrix entity with  3 fields:
+     * Creates alias of Matrix entity with 3 fields:
      * @param rowIndex
      * @param columnIndex
      * @param value
@@ -42,46 +54,47 @@ public class MatrixElement {
     }
 
     /**
-     * Get the result of action
-     * @return as the result of action
+     * Get the row index of the element
+     * @return the row index of the element
      */
     public int getRowIndex() {
         return this.rowIndex;
     }
     /**
-     * Set the result of action
-     * @param rowIndex as the result of action
+     * Set the row index of the element
+     * @param rowIndex - new row index of the element
      */
     public void setRowIndex(int rowIndex) {
         this.rowIndex = rowIndex;
     }
 
     /**
-     * Get the result of action
-     * @return as the result of action
+     * Get the column index of the element
+     * @return the column index of the element
      */
     public int getColumnIndex() {
         return this.columnIndex;
     }
 
     /**
-     * Set the result of action
-     * @param columnIndex as the result of action
+     * Set the column index of the element
+     * @param columnIndex - new column index of the element
      */
     public void setColumnIndex(int columnIndex) {
         this.columnIndex = columnIndex;
     }
+
     /**
-     * Get the result of action
-     * @return as the result of action
+     * Get the value of the element
+     * @return the value of the element
      */
     public Number getValue() {
         return this.value;
     }
 
     /**
-     * Set the result of action
-     * @param value as the result of action
+     * Set the value of the element
+     * @param value - new value of the element
      */
     public void setValue(Number value) {
         this.value = value;
