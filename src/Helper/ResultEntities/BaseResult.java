@@ -13,12 +13,12 @@ public class BaseResult {
     /*
      * Shows if the result action is successful
      */
-    protected boolean isSuccess;
+    private boolean isSuccess;
     
     /*
      * Shows the error message in case of unsuccessful action
      */
-    protected String message; 
+    private String message; 
     
     /**
      * Creates alias of Result entity with fields
