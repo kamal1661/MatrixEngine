@@ -10,12 +10,12 @@ package Helper.ResultEntities;
  * @author AlekseyKachan
  * @param <ResultType>. Data type of the returning value
  */
-public abstract class Result<ResultType> extends BaseResult {
+public abstract class ValueResult<ResultType> extends BaseResult {
 
     /**
      * Returning action result
      */
-    protected ResultType result;
+    private ResultType result;
 
     /**
      * Creates alias of Result entity with fields
@@ -23,7 +23,7 @@ public abstract class Result<ResultType> extends BaseResult {
      * @param message. Shows the error message in case of unsuccessful action 
      * @param result. The returning result of action
      */
-    public Result(boolean isSuccess, String message, ResultType result) {
+    public ValueResult(boolean isSuccess, String message, ResultType result) {
         super(isSuccess, message);
         this.result = result;
     }
@@ -31,7 +31,7 @@ public abstract class Result<ResultType> extends BaseResult {
     /**
      * Creates empty alias of Result entity
      */
-    public Result() {}
+    public ValueResult() {}
 
     /**
      * Get the result of action
