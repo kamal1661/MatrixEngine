@@ -4,7 +4,7 @@
  */
 package ConsoleUI;
 
-import Helper.ResultEntities.Result;
+import Helper.ResultEntities.ValueResult;
 import java.util.Scanner;
 /**
  *
@@ -52,12 +52,7 @@ public class Main {
         Scanner sc = new Scanner(System.in); //Initialize the instance of Scanner
         System.out.print("Continue (y/n)? "); // Ask user to continue
         String choice = sc.nextLine(); // Get users input
-        if (!choice.equalsIgnoreCase("y")) { // Check if user does not wants to continue
-            return true; // Shows that user wants to finish
-        }
-        else {
-            return false; // Shows that user wants to continue
-        }
+        return !choice.equalsIgnoreCase("y"); // Check if user does not wants to continue
     }
     
     private static void displayWelcomeMessage() {
@@ -137,7 +132,7 @@ public class Main {
         System.out.println("The task to be solved. Content TBD");
     }
     
-    private static void displayResult(Result result) {
+    private static void displayResult(ValueResult result) {
         System.out.println("Result of evaluations. Content TBD");
     }
     
@@ -258,6 +253,9 @@ public class Main {
                 break;
             case "reset":
                 goBack();
+                break;
+            default:
+                System.out.println("No such option");
                 break;
         }
     }
