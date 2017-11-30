@@ -8,8 +8,8 @@ package MatrixWorker;
 import Data.Matrix;
 
 /**
- *
- * @author v2049
+ * Determination class executable
+ * @author Rodrigo Diaz M.
  */
 public class Determinator {
     

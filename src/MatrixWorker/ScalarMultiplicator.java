@@ -10,11 +10,15 @@ import Data.MatrixElement;
 
 /**
  * Scalar Multiplication class executable
- * @author v2049
+ * @author Rodrigo Diaz M.
  */
 
 public class ScalarMultiplicator {
-
+    
+    /*
+     * Gets values for rows and columns and performs matrices scalar multiplications.
+     * Returns result
+     */
     public Matrix executeScalarMultiplication(Matrix matrix, double scalarValue){
         Matrix resultMatrix = new Matrix();
         resultMatrix.setRowCount(matrix.getRowCount());
