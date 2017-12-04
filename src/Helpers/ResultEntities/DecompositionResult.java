@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Helper.ResultEntities;
+package Helpers.ResultEntities;
 
 import Data.Matrix;
 import java.util.Dictionary;

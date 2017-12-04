@@ -9,24 +9,27 @@ import Data.Matrix;
 import Data.MatrixElement;
 
 /**
- * Scalar Multiplication class executable
- * @author v2049
+ * Transposition class executer
+ * @author AlekseyKachan
  */
-
-public class ScalarMultiplicator {
-
-    public Matrix executeScalarMultiplication(Matrix matrix, double scalarValue){
+public class Transpositor {
+    
+    /**
+     * Transposes the matrix
+     * @param matrix - matrix to be transposed
+     * @return transposed matrix
+     */
+    public Matrix transpose(Matrix matrix) {
         Matrix resultMatrix = new Matrix(matrix.getRowCount(), matrix.getColumnCount());
-        for (int rowIndex = 0; rowIndex < matrix.getRowCount(); rowIndex++){
-            for (int columnIndex =0; columnIndex < matrix.getColumnCount(); columnIndex++){
+        for(int rowIndex = 0; rowIndex < resultMatrix.getRowCount(); rowIndex++) {
+            for(int columnIndex = 0; columnIndex < resultMatrix.getColumnCount(); columnIndex++) {
                 MatrixElement newElement = new MatrixElement();
                 newElement.setRowIndex(rowIndex);
                 newElement.setColumnIndex(columnIndex);
-                newElement.setValue(matrix.getElement(rowIndex, columnIndex).getValue().doubleValue() * scalarValue);
-                resultMatrix.setElement(newElement);
+                newElement.setValue(matrix.getElement(columnIndex, rowIndex).getValue());
             }
         }
         
         return resultMatrix;
-    }   
+    }
 }

@@ -4,7 +4,7 @@
  */
 package ConsoleUI;
 
-import Helper.ResultEntities.ValueResult;
+import Helpers.ResultEntities.ValueResult;
 import java.util.Scanner;
 /**
  *
@@ -25,6 +25,7 @@ public class Main {
                 case "1":
                     processSingleMatrixInput();
                     enterMatrix();
+                    Printer.printMatrix(MainController.matrix);
                     break;
                 case "2":
                     processMultipleMatricesInput();
@@ -231,10 +232,13 @@ public class Main {
         int rowsAmount = sc.nextInt();
         displayEnterAmoutOfColumns();
         int columnsAmount = sc.nextInt();
-        for (int i = 1; i <= rowsAmount; i++) {
-            for (int j = 1; j <= columnsAmount; j++) {
-                displayEnterValue(i, j);
+        MainController.setMatrix(rowsAmount, columnsAmount);
+        for (int rowIndex = 0; rowIndex < rowsAmount; rowIndex++) {
+            for (int columnIndex = 0; columnIndex < columnsAmount; columnIndex++) {
+                displayEnterValue(rowIndex, columnIndex);
                 int value = sc.nextInt();
+                MainController.setElement(rowIndex, columnIndex, value);
+                MainController.commitElement();
             }
         }
     }
@@ -244,6 +248,8 @@ public class Main {
         displayEnterAmoutOfRows();
         int rowsAmount = sc.nextInt();
         displayEnterAmoutOfColumns();
+        int columnsAmount = sc.nextInt();
+        MainController.setMatrix(rowsAmount, columnsAmount);
     }
     
     private static void processDefaultOption(String option) {

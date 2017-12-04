@@ -15,9 +15,7 @@ import Data.MatrixElement;
 public class Multiplicator {
     
     public Matrix executeMultiplication(Matrix firstMatrix, Matrix secondMatrix){
-        Matrix resultMatrix = new Matrix();
-        resultMatrix.setRowCount(secondMatrix.getRowCount());
-        resultMatrix.setColumnCount(firstMatrix.getColumnCount());
+        Matrix resultMatrix = new Matrix(secondMatrix.getRowCount(), firstMatrix.getColumnCount());
         for (int columnIndex = 0; columnIndex < resultMatrix.getColumnCount(); columnIndex++){
             for (int rowIndex =0; rowIndex < resultMatrix.getRowCount(); rowIndex++){
                 MatrixElement newElement = new MatrixElement();

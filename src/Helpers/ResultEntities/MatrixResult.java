@@ -3,26 +3,28 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Helper.ResultEntities;
+package Helpers.ResultEntities;
+
+import Data.Matrix;
 
 /**
- * Entity that shows the result of some action with some returning numeric value
+ * Entity that shows the result of some action with some returning matrix value
  * @author AlekseyKachan
  */
-public class NumberResult extends ValueResult<Number> {
+public class MatrixResult extends ValueResult<Matrix> {
 
     /**
-     * Creates alias of NumberResult entity with fields
+     * Creates alias of MatrixResult entity with fields
      * @param isSuccess. Shows if the result action as successful
      * @param message. Shows the error message in case of unsuccessful action 
      * @param result. The returning result of action
      */
-    public NumberResult(boolean isSuccess, String message, Number result) {
+    public MatrixResult(boolean isSuccess, String message, Matrix result) {
         super(isSuccess, message, result);
     }
     
     /**
-     * Creates empty alias of NumberResult entity
+     * Creates empty alias of MatrixResult entity
      */
-    public NumberResult() {}
+    public MatrixResult() {}
 }

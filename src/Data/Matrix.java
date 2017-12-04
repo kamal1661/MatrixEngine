@@ -5,6 +5,7 @@
  */
 package Data;
 
+import java.util.ArrayList;
 import java.util.List;
 /**
  * Entity that represents the Matrix
@@ -25,12 +26,7 @@ public class Matrix {
     /*
      * List of the elements of the matrix
      */
-    private List<MatrixElement> elements;
-
-    /**
-     * Creates empty alias of Matrix entity
-     */    
-    public Matrix() {}
+    private MatrixElement[][] elements;
     
     /**
      * Creates alias of Matrix entity with 2 fields:
@@ -40,6 +36,7 @@ public class Matrix {
     public Matrix(int rowCount, int columnCount) {
         this.rowCount = rowCount;
         this.columnCount = columnCount;
+        this.elements = new MatrixElement[rowCount][columnCount];
     }
     
     /**
@@ -48,7 +45,7 @@ public class Matrix {
      * @param columnCount
      * @param elements
      */
-    public Matrix(int rowCount, int columnCount, List<MatrixElement> elements) {
+    public Matrix(int rowCount, int columnCount, MatrixElement[][] elements) {
         this.rowCount = rowCount;
         this.columnCount = columnCount;
         this.elements = elements;
@@ -90,7 +87,7 @@ public class Matrix {
      * Get the list of the elements of the matrix
      * @return the list of the elements of the matrix
      */
-    public List<MatrixElement> getElements() {
+    public MatrixElement[][] getElements() {
         return this.elements;
     }
     
@@ -98,7 +95,7 @@ public class Matrix {
      * Set the list of the elements of the matrix
      * @param elements the new list of the elements of the matrix
      */
-    public void setElements(List<MatrixElement> elements) {
+    public void setElements(MatrixElement[][] elements) {
         this.elements = elements;
     }       
     
@@ -109,13 +106,7 @@ public class Matrix {
      * @return the matrix element
      */
     public MatrixElement getElement(int rowIndex, int columnIndex) {
-        for (MatrixElement element : this.elements) {
-            if (rowIndex == element.getRowIndex() && columnIndex == element.getColumnIndex()) {
-                return element;
-            }
-        }   
-        
-        return null;
+        return this.elements[rowIndex][columnIndex];
     }
     
     /**
@@ -128,13 +119,8 @@ public class Matrix {
     public boolean setElement(int rowIndex, int columnIndex, Number value) {
         boolean isSuccess = false;
         if((rowIndex <= this.rowCount) && (columnIndex <= this.columnCount)){
-            for (MatrixElement element : this.elements) {
-                if (rowIndex == element.getRowIndex() && columnIndex == element.getColumnIndex()) {
-                    element.setValue(value);
-                    isSuccess = true;
-                    break;
-                }      
-            }
+            this.elements[rowIndex][columnIndex] = new MatrixElement(rowIndex, columnIndex, value);
+            isSuccess = true;
         }
         
         return isSuccess;
