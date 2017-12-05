@@ -5,8 +5,6 @@
  */
 package Data;
 
-import java.util.ArrayList;
-import java.util.List;
 /**
  * Entity that represents the Matrix
  * @author Rodrigo Diaz M.

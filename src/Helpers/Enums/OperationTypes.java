@@ -3,17 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package MatrixWorker;
-
-import Data.Matrix;
+package Helpers.Enums;
 
 /**
  *
- * @author v2049
+ * @author AlekseyKachan
  */
-public class Determinator {
-    
-    public Number executeDetermination(Matrix matrix){
-        return 0;
-    }
+public enum OperationTypes {
+    NONE,
+    UNARY,
+    BINARY
 }

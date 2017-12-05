@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package MatrixWorker;
+package MatrixWorkers;
 
 import Data.Matrix;
 import Data.MatrixElement;
@@ -14,7 +14,7 @@ import Data.MatrixElement;
  */
 public class Multiplicator {
     
-    public Matrix executeMultiplication(Matrix firstMatrix, Matrix secondMatrix){
+    public static Matrix executeMultiplication(Matrix firstMatrix, Matrix secondMatrix){
         Matrix resultMatrix = new Matrix(secondMatrix.getRowCount(), firstMatrix.getColumnCount());
         for (int columnIndex = 0; columnIndex < resultMatrix.getColumnCount(); columnIndex++){
             for (int rowIndex =0; rowIndex < resultMatrix.getRowCount(); rowIndex++){
