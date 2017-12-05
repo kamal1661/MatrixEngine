@@ -26,6 +26,8 @@ public class Matrix {
      */
     private MatrixElement[][] elements;
     
+    public Matrix() {}
+    
     /**
      * Creates alias of Matrix entity with 2 fields:
      * @param rowCount
