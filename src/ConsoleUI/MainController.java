@@ -15,23 +15,23 @@ import MatrixWorkers.MatrixWorker;
 import java.util.Scanner;
 
 /**
- *
- * @author AlekseyKachan
+ *@author AlekseyKachan
+ * Entity that determines what type of operations are being performed at any given time.
  */
 public class MainController {
 
     /**
-     *
+     * operation that is being done at this time.
      */
     public static MatrixOperations currentOperation = MatrixOperations.NONE;
 
     /**
-     *
+     *  what type of operation is going to be performed.
      */
     public static OperationTypes currentOperationType = OperationTypes.NONE;
         
     /**
-     *
+     * Gets the input for what type of operation will be performed.
      */
     public static void getInputs() {
         
@@ -44,7 +44,10 @@ public class MainController {
                 break;
         }         
     }
-      
+    
+    /**
+     * Executes the choice of which operation to perform to a single matrix.
+     */
     private static void processSingleMatrixInput() {
         MatrixWorker.initialize();
         Scanner sc = new Scanner(System.in);
@@ -88,6 +91,9 @@ public class MainController {
         }
     }
     
+    /**
+     * Gives the choice of which operation to perform to multiple matrices.
+     */
     private static void processMultipleMatricesInput() {
         Scanner sc = new Scanner(System.in);
         Printer.displayMultipleMatricesOperations();
@@ -115,6 +121,9 @@ public class MainController {
         }
     }
     
+    /**
+     * Displays the matrix decomposition options.
+     */
     private static void processDecompositionInput() {
         Scanner sc = new Scanner(System.in);
         Printer.displayMatrixDecompositionOptions();
@@ -139,7 +148,7 @@ public class MainController {
     }
     
     /**
-     *
+     * Executes the operations that were previously selected to be performed.
      */
     public static void executeOperation() {
         if (currentOperation != MatrixOperations.NONE) {
@@ -159,7 +168,7 @@ public class MainController {
     }
     
     /**
-     *
+     * Returns results 
      * @return
      */
     public static boolean toFinish() {
