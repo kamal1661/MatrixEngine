@@ -53,7 +53,7 @@ public class Printer {
      * @param currentOperation
      */
     public static void displayTask(MatrixOperations currentOperation) {
-        System.out.println("The task to be solved. Content TBD");
+        System.out.println("Operation: " + currentOperation.toString());
     }
     
     /**
@@ -61,7 +61,14 @@ public class Printer {
      * @param result
      */
     public static void displayResult(ValueResult result) {
-        System.out.println("Result of evaluations. Content TBD");
+        if (result.isSuccess()) {
+            System.out.println("Result of evaluations:");
+            Printer.displayMatrix((Matrix)result.getResult());
+        }
+        else {
+            System.err.println("Execution FAILED. Description:");
+            System.err.println(result.getMessage());
+        }
     }
     
     /**
@@ -78,6 +85,7 @@ public class Printer {
         System.out.println("7 - Decompose matrix");
         System.out.println("8 - Scalar multiplication");
         System.out.println("9 - Get Submatrix");
+        System.out.println("10 - Transpose matrix");
         System.out.println("Reset - to return to the beginning");
         System.out.println("Exit - to exit the application");
         System.out.print("Your option: ");

@@ -7,6 +7,7 @@ package MatrixWorkers;
 
 import Data.Matrix;
 import Data.MatrixElement;
+import Helpers.ResultEntities.MatrixResult;
 
 /**
  * Transposition class executer
@@ -19,17 +20,21 @@ public class Transpositor {
      * @param matrix - matrix to be transposed
      * @return transposed matrix
      */
-    public Matrix transpose(Matrix matrix) {
-        Matrix resultMatrix = new Matrix(matrix.getRowCount(), matrix.getColumnCount());
+    public static MatrixResult execute(Matrix matrix) {
+        MatrixResult result = new MatrixResult();
+        Matrix resultMatrix = new Matrix(matrix.getColumnCount(), matrix.getRowCount());
         for(int rowIndex = 0; rowIndex < resultMatrix.getRowCount(); rowIndex++) {
             for(int columnIndex = 0; columnIndex < resultMatrix.getColumnCount(); columnIndex++) {
                 MatrixElement newElement = new MatrixElement();
                 newElement.setRowIndex(rowIndex);
                 newElement.setColumnIndex(columnIndex);
                 newElement.setValue(matrix.getElement(columnIndex, rowIndex).getValue());
+                resultMatrix.setElement(newElement);
             }
         }
         
-        return resultMatrix;
+        result.setIsSuccess(true);
+        result.setResult(resultMatrix);
+        return result;
     }
 }

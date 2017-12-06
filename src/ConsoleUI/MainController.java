@@ -6,11 +6,9 @@
 package ConsoleUI;
 
 import Data.Matrix;
-import Data.MatrixElement;
 import Helpers.Enums.MatrixOperations;
 import Helpers.Enums.OperationTypes;
 import Helpers.ResultEntities.ValueResult;
-import Helpers.Utils.ArrayUtil;
 import MatrixWorkers.MatrixWorker;
 import java.util.Scanner;
 
@@ -84,6 +82,10 @@ public class MainController {
             case "9":
                 currentOperation = MatrixOperations.GET_SUBMATRIX;
                 break;
+            case "10":
+                currentOperation = MatrixOperations.TRANSPOSE;
+                MatrixWorker.addMatrix(MatrixCreator.createMatrix());
+                break;
             default:
                 currentOperation = MatrixOperations.NONE;
                 DefaultOptionUtil.execute(option);
@@ -95,12 +97,15 @@ public class MainController {
      * Gives the choice of which operation to perform to multiple matrices.
      */
     private static void processMultipleMatricesInput() {
+        MatrixWorker.initialize();
         Scanner sc = new Scanner(System.in);
         Printer.displayMultipleMatricesOperations();
         String option = sc.nextLine();
         switch(option) {
             case "1":
                 currentOperation = MatrixOperations.MULTIPLICATION;
+                MatrixWorker.addMatrix(MatrixCreator.createMatrix());
+                MatrixWorker.addMatrix(MatrixCreator.createMatrix());
                 break;
             case "2":
                 currentOperation = MatrixOperations.DIVISION;
@@ -161,9 +166,8 @@ public class MainController {
             }
 
             ValueResult result = MatrixWorker.executeOperation(currentOperation);
-            Printer.displayMatrix((Matrix)result.getResult());
             Printer.displayTask(currentOperation);
-            Printer.displayResult(null);
+            Printer.displayResult(result);
         }
     }
     

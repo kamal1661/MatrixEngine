@@ -7,7 +7,6 @@ package MatrixWorkers;
 
 import Data.Matrix;
 import Helpers.Enums.MatrixOperations;
-import Helpers.ResultEntities.BaseResult;
 import Helpers.ResultEntities.MatrixResult;
 import Helpers.ResultEntities.ValueResult;
 import Helpers.Utils.ArrayUtil;
@@ -59,9 +58,38 @@ public class MatrixWorker {
      */
     public static ValueResult executeOperation(MatrixOperations operation) {
         switch(operation) {
+            case ELEVATE_MATRIX:
+                break;
+            case FIND_DETERMINANT:
+                break;
+            case CHECK_NOT_DEGENERTE:
+                break;
+            case FIND_INVERSE:
+                break;
+            case FIND_MINOR:
+                break;
+            case FIND_RANK:
+                break;
+            case DECOMPOSE:
+                break;
             case SCALAR_MULTIPLICATION:
-                Matrix resultMatrix = ScalarMultiplicator.execute(matrices[0], scalarValues[0].doubleValue());
-                return new MatrixResult(true, "", resultMatrix);
+                return ScalarMultiplicator.execute(matrices[0], scalarValues[0].doubleValue());
+            case GET_SUBMATRIX:
+                break;
+            case TRANSPOSE:
+                return Transpositor.execute(matrices[0]);
+            case MULTIPLICATION:
+                return Multiplicator.execute(matrices[0], matrices[1]);
+            case DIVISION:
+                break;
+            case ADDITION:
+                break;
+            case SUBSTRACTION:
+                break;
+            case CHECK_COMMUTATIVE:
+                break;
+            default:
+                return new MatrixResult(false, "No such operation", null);
         }
         return null;
     }
