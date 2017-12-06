@@ -10,20 +10,20 @@ import Helpers.Enums.MatrixOperations;
 import Helpers.ResultEntities.ValueResult;
 
 /**
- *
+ * Entity that displays system messages in a menu
  * @author AlekseyKachan
  */
 public class Printer {
 
     /**
-     *
+     * Displays welcome message.
      */
     public static void displayWelcomeMessage() {
         System.out.println("Welcome message. Content TBD");
     }
     
     /**
-     *
+     * Displays primary options.
      */
     public static void displayPrimaryOptions() {
         System.out.println("Select one of the following options:");
@@ -34,7 +34,7 @@ public class Printer {
     }
     
     /**
-     *
+     * Displays matrix options.
      * @param matrix
      */
     public static void displayMatrix(Matrix matrix) {
@@ -49,7 +49,7 @@ public class Printer {
     }
     
     /**
-     *
+     * Displays current operation or task.
      * @param currentOperation
      */
     public static void displayTask(MatrixOperations currentOperation) {
@@ -57,7 +57,7 @@ public class Printer {
     }
     
     /**
-     *
+     * Displays result.
      * @param result
      */
     public static void displayResult(ValueResult result) {
@@ -65,7 +65,7 @@ public class Printer {
     }
     
     /**
-     *
+     * Displays single matrices operations.
      */
     public static void displaySingleMatrixOperations() {
         System.out.println("Select one of the following single matrix opertations:");
@@ -84,7 +84,7 @@ public class Printer {
     }
     
     /**
-     *
+     * Displays multiple matrices operations.
      */
     public static void displayMultipleMatricesOperations() {
         System.out.println("Select on of the following multiple matrices operations:");
@@ -99,7 +99,7 @@ public class Printer {
     }
     
     /**
-     *
+     * Displays matrices decomposition options.
      */
     public static void displayMatrixDecompositionOptions(){
         System.out.println("Select one of the following matrix decomposition options:");
@@ -115,9 +115,9 @@ public class Printer {
     }
     
     /**
-     *
+     * Display matrices creation options.
      */
-    public static void diplayMatrixCreationOptions(){
+    public static void displayMatrixCreationOptions(){
         System.out.println("Select the way matrix to be created:");
         System.out.println("1 - Enter size & each value");
         System.out.println("2 - Enter size & random [-99; 99] integer values");
@@ -128,21 +128,21 @@ public class Printer {
     }
     
     /**
-     *
+     * Display matrix amount of rows user input.
      */
     public static void displayEnterAmoutOfRows(){
         System.out.print("Enter the amout of rows: ");
     }
     
     /**
-     *
+     * Displays matrix amount of columns user input.
      */
     public static void displayEnterAmoutOfColumns(){
         System.out.print("Enter the amout of columns: ");
     }
     
     /**
-     *
+     * Displays matrix value user input.
      * @param rowNumber
      * @param columnNumber
      */
