@@ -10,8 +10,24 @@ package Helpers.Enums;
  * @author AlekseyKachan
  */
 public enum MatrixCreationTypes {
+
+    /**
+     *
+     */
     NONE,
+
+    /**
+     *
+     */
     COMPLETE_USER_INPUT,
+
+    /**
+     *
+     */
     SIZE_USER_INPUT,
+
+    /**
+     *
+     */
     NO_USER_INPUT
 }

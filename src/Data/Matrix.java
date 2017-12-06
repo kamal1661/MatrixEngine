@@ -26,6 +26,9 @@ public class Matrix {
      */
     private MatrixElement[][] elements;
     
+    /**
+     *
+     */
     public Matrix() {}
     
     /**

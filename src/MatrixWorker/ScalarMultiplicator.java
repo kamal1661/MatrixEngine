@@ -19,6 +19,14 @@ public class ScalarMultiplicator {
      * Gets values for rows and columns and performs matrices scalar multiplications.
      * Returns result
      */
+
+    /**
+     *
+     * @param matrix
+     * @param scalarValue
+     * @return
+     */
+
     public Matrix executeScalarMultiplication(Matrix matrix, double scalarValue){
         Matrix resultMatrix = new Matrix();
         resultMatrix.setRowCount(matrix.getRowCount());

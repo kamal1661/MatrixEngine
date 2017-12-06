@@ -20,23 +20,43 @@ public class MatrixWorker {
     private static Matrix[] matrices;
     private static Number[] scalarValues;
     
+    /**
+     *
+     */
     public static void initialize() {
         matrices = new Matrix[2];
         scalarValues = new Number[10];
     }
     
+    /**
+     *
+     * @return
+     */
     public static Matrix[] getMatrices() {
         return matrices;
     }
     
+    /**
+     *
+     * @param matrix
+     */
     public static void addMatrix(Matrix matrix) {
         matrices[ArrayUtil.getArraysLength(matrices)] = matrix;
     }
     
+    /**
+     *
+     * @param number
+     */
     public static void addScalarValue(Number number) {
         scalarValues[ArrayUtil.getArraysLength(scalarValues)] = number;
     }
     
+    /**
+     *
+     * @param operation
+     * @return
+     */
     public static ValueResult executeOperation(MatrixOperations operation) {
         switch(operation) {
             case SCALAR_MULTIPLICATION:

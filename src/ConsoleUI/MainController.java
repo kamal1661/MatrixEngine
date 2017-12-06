@@ -19,9 +19,20 @@ import java.util.Scanner;
  * @author AlekseyKachan
  */
 public class MainController {
+
+    /**
+     *
+     */
     public static MatrixOperations currentOperation = MatrixOperations.NONE;
+
+    /**
+     *
+     */
     public static OperationTypes currentOperationType = OperationTypes.NONE;
         
+    /**
+     *
+     */
     public static void getInputs() {
         
         switch(currentOperationType) {
@@ -127,6 +138,9 @@ public class MainController {
         }
     }
     
+    /**
+     *
+     */
     public static void executeOperation() {
         if (currentOperation != MatrixOperations.NONE) {
             for (Matrix matrix : MatrixWorker.getMatrices()) {
@@ -144,6 +158,10 @@ public class MainController {
         }
     }
     
+    /**
+     *
+     * @return
+     */
     public static boolean toFinish() {
         Scanner sc = new Scanner(System.in); //Initialize the instance of Scanner
         System.out.print("Continue (y/n)? "); // Ask user to continue

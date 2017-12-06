@@ -14,6 +14,12 @@ import Data.MatrixElement;
  */
 public class Multiplicator {
     
+    /**
+     *
+     * @param firstMatrix
+     * @param secondMatrix
+     * @return
+     */
     public static Matrix executeMultiplication(Matrix firstMatrix, Matrix secondMatrix){
         Matrix resultMatrix = new Matrix(secondMatrix.getRowCount(), firstMatrix.getColumnCount());
         for (int columnIndex = 0; columnIndex < resultMatrix.getColumnCount(); columnIndex++){

@@ -10,6 +10,11 @@ package ConsoleUI;
  * @author AlekseyKachan
  */
 public class DefaultOptionUtil {
+
+    /**
+     *
+     * @param option
+     */
     public static void execute(String option) {
         switch(option.toLowerCase()){
             case "exit":

@@ -18,6 +18,14 @@ public class Multiplicator {
      * Gets values for rows and columns and performs matrices multiplications.
      * Returns result
      */
+
+    /**
+     *
+     * @param firstMatrix
+     * @param secondMatrix
+     * @return
+     */
+
     public Matrix executeMultiplication(Matrix firstMatrix, Matrix secondMatrix){
         Matrix resultMatrix = new Matrix();
         resultMatrix.setRowCount(secondMatrix.getRowCount());

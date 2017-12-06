@@ -16,8 +16,16 @@ import java.util.concurrent.ThreadLocalRandom;
  * @author AlekseyKachan
  */
 public class MatrixCreator {
+
+    /**
+     *
+     */
     public static MatrixCreationTypes creationType = MatrixCreationTypes.NONE;
     
+    /**
+     *
+     * @return
+     */
     public static Matrix createMatrix() {
         getCreationType();
         Matrix matrix = getMatrixSize();

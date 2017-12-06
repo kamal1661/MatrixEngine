@@ -10,6 +10,12 @@ package Helpers.Utils;
  * @author AlekseyKachan
  */
 public class ArrayUtil {
+
+    /**
+     *
+     * @param array
+     * @return
+     */
     public static int getArraysLength(Object[] array) {
         int counter = 0;
         for(Object value: array) {

@@ -10,7 +10,19 @@ package Helpers.Enums;
  * @author AlekseyKachan
  */
 public enum OperationTypes {
+
+    /**
+     *
+     */
     NONE,
+
+    /**
+     *
+     */
     UNARY,
+
+    /**
+     *
+     */
     BINARY
 }

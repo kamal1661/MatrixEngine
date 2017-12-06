@@ -15,6 +15,12 @@ import Data.MatrixElement;
 
 public class ScalarMultiplicator {
 
+    /**
+     *
+     * @param matrix
+     * @param scalarValue
+     * @return
+     */
     public static Matrix execute(Matrix matrix, double scalarValue){
         Matrix resultMatrix = new Matrix(matrix.getRowCount(), matrix.getColumnCount());
         for (int rowIndex = 0; rowIndex < matrix.getRowCount(); rowIndex++){

@@ -13,6 +13,11 @@ import Data.Matrix;
  */
 public class Determinator {
     
+    /**
+     *
+     * @param matrix
+     * @return
+     */
     public Number executeDetermination(Matrix matrix){
         return 0;
     }
