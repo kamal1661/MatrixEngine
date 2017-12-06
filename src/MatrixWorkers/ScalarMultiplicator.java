@@ -10,14 +10,14 @@ import Data.MatrixElement;
 import Helpers.ResultEntities.MatrixResult;
 
 /**
- * Scalar Multiplication class executable
- * @author v2049
+ * Scalar Multiplication class executable.
+ * @author Rodrigo Diaz M.
  */
 
 public class ScalarMultiplicator {
 
     /**
-     *
+     * Executes scalar multiplications.
      * @param matrix
      * @param scalarValue
      * @return

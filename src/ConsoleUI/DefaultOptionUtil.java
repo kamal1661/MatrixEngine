@@ -6,13 +6,13 @@
 package ConsoleUI;
 
 /**
- *
+ * Entity that displays menu options to the user for executing, exiting and going back.
  * @author AlekseyKachan
  */
 public class DefaultOptionUtil {
 
     /**
-     *
+     * Displays options to the user.
      * @param option
      */
     public static void execute(String option) {
@@ -29,11 +29,17 @@ public class DefaultOptionUtil {
         }
     }
     
+     /**
+     * Exits application.
+     */
     private static void exitApplication() {
         System.out.println("Thank you for using this application. Good bye!");
         System.exit(0);
     }
     
+    /**
+     * Goes back to the menu.
+     */
     private static void goBack() {
         System.out.flush();
     }

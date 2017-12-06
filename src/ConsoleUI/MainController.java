@@ -19,12 +19,12 @@ import java.util.Scanner;
 public class MainController {
 
     /**
-     * operation that is being done at this time.
+     * Controls the operation that is currently being done.
      */
     public static MatrixOperations currentOperation = MatrixOperations.NONE;
 
     /**
-     *  what type of operation is going to be performed.
+     *  Controls what type of operation is going to be performed.
      */
     public static OperationTypes currentOperationType = OperationTypes.NONE;
         
@@ -127,7 +127,7 @@ public class MainController {
     }
     
     /**
-     * Displays the matrix decomposition options.
+     * Inputs for the matrix decomposition options.
      */
     private static void processDecompositionInput() {
         Scanner sc = new Scanner(System.in);
@@ -172,7 +172,7 @@ public class MainController {
     }
     
     /**
-     * Returns results 
+     * Gives choices to continue or not
      * @return
      */
     public static boolean toFinish() {
@@ -181,7 +181,11 @@ public class MainController {
         String choice = sc.nextLine(); // Get users input
         return !choice.equalsIgnoreCase("y"); // Check if user does not wants to continue
     }
-
+    
+    /**
+     * Gets scalar input.
+     * @return
+     */
     private static Number getScalarInput() {
         Scanner sc = new Scanner(System.in); //Initialize the instance of Scanner
         System.out.print("Enter the scalar value: "); // Ask user to enter scalar value

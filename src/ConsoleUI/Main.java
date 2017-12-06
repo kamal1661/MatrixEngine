@@ -7,12 +7,13 @@ package ConsoleUI;
 import Helpers.Enums.OperationTypes;
 import java.util.Scanner;
 /**
- *
+ * Main entity of the ConsoleUI. 
  * @author AlekseyKachan
  */
 public class Main {
 
     /**
+     * Displays system messages.
      * @param args the command line arguments
      */
     public static void main(String[] args) {

@@ -6,13 +6,13 @@
 package Helpers.Utils;
 
 /**
- *
+ * Utility for array operations.
  * @author AlekseyKachan
  */
 public class ArrayUtil {
 
     /**
-     *
+     * Gets arrays length.
      * @param array
      * @return
      */

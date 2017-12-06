@@ -10,13 +10,13 @@ import Data.MatrixElement;
 import Helpers.ResultEntities.MatrixResult;
 
 /**
- * Multiplication class executable
- * @author v2049
+ * Multiplication class executable.
+ * @author Rodrigo Diaz M.
  */
 public class Multiplicator {
     
     /**
-     *
+     * Executes multiplications.
      * @param firstMatrix
      * @param secondMatrix
      * @return

@@ -10,7 +10,7 @@ import Data.MatrixElement;
 import Helpers.ResultEntities.MatrixResult;
 
 /**
- * Transposition class executer
+ * Transposition class executable.
  * @author AlekseyKachan
  */
 public class Transpositor {
