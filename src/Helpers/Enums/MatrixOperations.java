@@ -14,75 +14,95 @@ public enum MatrixOperations {
     /**
      *
      */
-    NONE,
+    NONE ("None"),
+    
+    /**
+     *
+     */
+    ELEVATE_MATRIX ("Matrix Elevation"),
 
     /**
      *
      */
-    ELEVATE_MATRIX,
+    FIND_DETERMINANT ("Find Determinant"),
 
     /**
      *
      */
-    FIND_DETERMINANT,
+    CHECK_NOT_DEGENERTE ("Check If Matrix Is NOT Degenerate"),
 
     /**
      *
      */
-    CHECK_NOT_DEGENERTE,
+    FIND_INVERSE ("Find Inverse Matrix"),
 
     /**
      *
      */
-    FIND_INVERSE,
+    FIND_MINOR ("Find Minor"),
 
     /**
      *
      */
-    FIND_MINOR,
+    FIND_RANK ("Find Rank"),
 
     /**
      *
      */
-    FIND_RANK,
+    DECOMPOSE ("Decomposition"),
 
     /**
      *
      */
-    DECOMPOSE,
+    SCALAR_MULTIPLICATION ("Scalar Multiplication"),
 
     /**
      *
      */
-    SCALAR_MULTIPLICATION,
+    GET_SUBMATRIX ("Get Submatrix"),
+    
+    /**
+     *
+     */
+    TRANSPOSE ("Transpose Matrix"),
 
     /**
      *
      */
-    GET_SUBMATRIX,
+    MULTIPLICATION ("Multiplication"),
 
     /**
      *
      */
-    MULTIPLICATION,
+    DIVISION ("Division"),
 
     /**
      *
      */
-    DIVISION,
+    ADDITION ("Addition"),
 
     /**
      *
      */
-    ADDITION,
+    SUBSTRACTION ("Substraction"),
 
     /**
      *
      */
-    SUBSTRACTION,
+    CHECK_COMMUTATIVE ("Check If Matrices are Commutative");
 
-    /**
-     *
-     */
-    CHECK_COMMUTATIVE
+    private final String name;       
+
+    private MatrixOperations(String name) {
+        this.name = name;
+    }
+
+    public boolean equalsName(String otherName) {
+        return name.equals(otherName);
+    }
+
+    public String toString() {
+       return this.name;
+    }
+
 }

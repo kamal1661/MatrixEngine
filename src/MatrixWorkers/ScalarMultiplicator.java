@@ -7,6 +7,7 @@ package MatrixWorkers;
 
 import Data.Matrix;
 import Data.MatrixElement;
+import Helpers.ResultEntities.MatrixResult;
 
 /**
  * Scalar Multiplication class executable
@@ -21,7 +22,8 @@ public class ScalarMultiplicator {
      * @param scalarValue
      * @return
      */
-    public static Matrix execute(Matrix matrix, double scalarValue){
+    public static MatrixResult execute(Matrix matrix, double scalarValue){
+        MatrixResult result = new MatrixResult();
         Matrix resultMatrix = new Matrix(matrix.getRowCount(), matrix.getColumnCount());
         for (int rowIndex = 0; rowIndex < matrix.getRowCount(); rowIndex++){
             for (int columnIndex =0; columnIndex < matrix.getColumnCount(); columnIndex++){
@@ -33,6 +35,8 @@ public class ScalarMultiplicator {
             }
         }
         
-        return resultMatrix;
+        result.setIsSuccess(true);
+        result.setResult(resultMatrix);
+        return result;
     }   
 }

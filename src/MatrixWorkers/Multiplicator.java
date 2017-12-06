@@ -7,6 +7,7 @@ package MatrixWorkers;
 
 import Data.Matrix;
 import Data.MatrixElement;
+import Helpers.ResultEntities.MatrixResult;
 
 /**
  * Multiplication class executable
@@ -20,24 +21,35 @@ public class Multiplicator {
      * @param secondMatrix
      * @return
      */
-    public static Matrix executeMultiplication(Matrix firstMatrix, Matrix secondMatrix){
-        Matrix resultMatrix = new Matrix(secondMatrix.getRowCount(), firstMatrix.getColumnCount());
-        for (int columnIndex = 0; columnIndex < resultMatrix.getColumnCount(); columnIndex++){
-            for (int rowIndex =0; rowIndex < resultMatrix.getRowCount(); rowIndex++){
-                MatrixElement newElement = new MatrixElement();
-                newElement.setRowIndex(rowIndex);
-                newElement.setColumnIndex(columnIndex);
-                double value1 = firstMatrix.getElement(rowIndex, columnIndex).getValue().doubleValue();
-                double value2 = secondMatrix.getElement(rowIndex, columnIndex).getValue().doubleValue();
-                double value3 = firstMatrix.getElement(rowIndex + 1, columnIndex).getValue().doubleValue();
-                double value4 = secondMatrix.getElement(rowIndex, columnIndex +1).getValue().doubleValue();
-                double newValue = value1 * value2 + value3 * value4;
-                newElement.setValue(newValue);
-                resultMatrix.setElement(newElement);
+    public static MatrixResult execute(Matrix firstMatrix, Matrix secondMatrix){
+        MatrixResult result = new MatrixResult();
+        if (firstMatrix.getColumnCount() == secondMatrix.getRowCount()) {
+            Matrix resultMatrix = new Matrix(firstMatrix.getRowCount(), secondMatrix.getColumnCount());
+            int internalSizeCounter = firstMatrix.getRowCount();
+            for (int columnIndex = 0; columnIndex < resultMatrix.getColumnCount(); columnIndex++){
+                for (int rowIndex =0; rowIndex < resultMatrix.getRowCount(); rowIndex++){
+                    MatrixElement newElement = new MatrixElement();
+                    newElement.setRowIndex(rowIndex);
+                    newElement.setColumnIndex(columnIndex);
+                    double newValue = 0;
+                    for (int internalIndex = 0; internalIndex < internalSizeCounter; internalIndex++) {
+                        newValue += firstMatrix.getElement(rowIndex, internalIndex).getValue().doubleValue() * secondMatrix.getElement(internalIndex, columnIndex).getValue().doubleValue();
+                    }
+
+                    newElement.setValue(newValue);
+                    resultMatrix.setElement(newElement);
+                }
             }
+
+            result.setIsSuccess(true);
+            result.setResult(resultMatrix); 
+        }
+        else {
+            result.setIsSuccess(false);
+            result.setMessage("Amount of columns of the first matrix should equals to amount of rows of the second matrix");
         }
         
-        return resultMatrix;
+        return result;
     }   
 }    
 
