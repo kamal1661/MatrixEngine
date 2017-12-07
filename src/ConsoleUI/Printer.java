@@ -72,7 +72,7 @@ public class Printer {
     }
     
     /**
-     * Displays single matrices operations.
+     * Displays single matrix operations.
      */
     public static void displaySingleMatrixOperations() {
         System.out.println("Select one of the following single matrix opertations:");

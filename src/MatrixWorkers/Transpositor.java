@@ -16,9 +16,9 @@ import Helpers.ResultEntities.MatrixResult;
 public class Transpositor {
     
     /**
-     * Transposes the matrix
+     * Executes matrix transposition
      * @param matrix - matrix to be transposed
-     * @return transposed matrix
+     * @return result entity for matrices
      */
     public static MatrixResult execute(Matrix matrix) {
         MatrixResult result = new MatrixResult();

@@ -12,19 +12,19 @@ import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 
 /**
- * Entity that creates matrices and determines its characteristics.
+ * Entity that creates matrices and determines its characteristics
  * @author AlekseyKachan
  */
 public class MatrixCreator {
 
     /**
-     * Determines type of the matrix to be created.
+     * Determines how to create the matrix
      */
-    public static MatrixCreationTypes creationType = MatrixCreationTypes.NONE;
+    private static MatrixCreationTypes creationType = MatrixCreationTypes.NONE;
     
     /**
-     * Creates matrix.
-     * @return
+     * Creates matrix
+     * @return created matrix
      */
     public static Matrix createMatrix() {
         getCreationType();
@@ -34,7 +34,7 @@ public class MatrixCreator {
     }
     
     /**
-     * Gets creation type.
+     * Gets creation type
      */
     private static void getCreationType() {
         Scanner sc = new Scanner(System.in);
@@ -58,7 +58,8 @@ public class MatrixCreator {
     }
     
      /**
-     * Gets matrix size.
+     * Gets matrix size
+     * @return matrix with size
      */
     private static Matrix getMatrixSize() {
         switch (creationType) {
@@ -74,7 +75,8 @@ public class MatrixCreator {
     }
     
      /**
-     * Gets user creation type from user.
+     * Gets user matrix size from user
+     * @return matrix with size
      */
     private static Matrix getUserMatrixSize() {
         Scanner sc = new Scanner(System.in);
@@ -86,7 +88,8 @@ public class MatrixCreator {
     }
     
      /**
-     * Gets random creation type from user.
+     * Gets random matrix size
+     * @return matrix with size
      */
     private static Matrix getRandomMatrixSize() {
         Printer.displayEnterAmoutOfRows();
@@ -97,7 +100,8 @@ public class MatrixCreator {
     }
     
      /**
-     * Gets matrix values.
+     * Gets matrix values
+     * @param matrix - entity for new values
      */
     private static void getMatrixValues(Matrix matrix) {
         for (int rowIndex = 0; rowIndex < matrix.getRowCount(); rowIndex++) {
@@ -108,7 +112,10 @@ public class MatrixCreator {
     }
     
      /**
-     * Gets matrix elements.
+     * Gets matrix elements
+     * @param rowIndex - row index of new element
+     * @param columnIndex - column index of new element
+     * @return new matrix element
      */
     private static MatrixElement getMatrixElement(int rowIndex, int columnIndex) {
         switch (creationType) {
@@ -124,7 +131,10 @@ public class MatrixCreator {
     }
     
      /**
-     * Gets matrix elements from the user.
+     * Gets matrix elements from the user
+     * @param rowIndex - row index of new element
+     * @param columnIndex - column index of new element
+     * @return new matrix element
      */
     private static MatrixElement getUserMatrixElement(int rowIndex, int columnIndex) {
         MatrixElement element = new MatrixElement(rowIndex, columnIndex);
@@ -135,7 +145,10 @@ public class MatrixCreator {
     }
     
      /**
-     * Gets random matrix elements.
+     * Gets random matrix elements
+     * @param rowIndex - row index of new element
+     * @param columnIndex - column index of new element
+     * @return new matrix element
      */
     private static MatrixElement getRandomMatrixElement(int rowIndex, int columnIndex) {
         MatrixElement element = new MatrixElement(rowIndex, columnIndex);

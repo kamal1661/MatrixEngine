@@ -27,7 +27,7 @@ public class Matrix {
     private MatrixElement[][] elements;
     
     /**
-     *
+     * Creates empty alias of Matrix entity
      */
     public Matrix() {}
     

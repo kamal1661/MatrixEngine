@@ -12,7 +12,7 @@ import Helpers.ResultEntities.ValueResult;
 import Helpers.Utils.ArrayUtil;
 
 /**
- * Entity that performs matrices operations.
+ * Entity that performs matrices operations
  * @author AlekseyKachan
  */
 public class MatrixWorker {
@@ -20,7 +20,7 @@ public class MatrixWorker {
     private static Number[] scalarValues;
     
     /**
-     * Initializes matrix worker.
+     * Initializes matrix worker
      */
     public static void initialize() {
         matrices = new Matrix[2];
@@ -28,33 +28,33 @@ public class MatrixWorker {
     }
     
     /**
-     * Gets matrices.
-     * @return
+     * Gets matrices
+     * @return array of matrices
      */
     public static Matrix[] getMatrices() {
         return matrices;
     }
     
     /**
-     * Adds matrices.
-     * @param matrix
+     * Adds matrix to array
+     * @param matrix to be added
      */
     public static void addMatrix(Matrix matrix) {
         matrices[ArrayUtil.getArraysLength(matrices)] = matrix;
     }
     
     /**
-     * Adds scalar vales.
-     * @param number
+     * Adds scalar value to array
+     * @param number to be added
      */
     public static void addScalarValue(Number number) {
         scalarValues[ArrayUtil.getArraysLength(scalarValues)] = number;
     }
     
     /**
-     * Executes operation.
-     * @param operation
-     * @return
+     * Executes operation
+     * @param operation to be executed
+     * @return valued result entity
      */
     public static ValueResult executeOperation(MatrixOperations operation) {
         switch(operation) {

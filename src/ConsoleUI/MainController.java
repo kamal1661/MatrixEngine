@@ -14,22 +14,22 @@ import java.util.Scanner;
 
 /**
  *@author AlekseyKachan
- * Entity that determines what type of operations are being performed at any given time.
+ * Entity that determines what type of operations are being performed at any given time
  */
 public class MainController {
 
     /**
-     * Controls the operation that is currently being done.
+     * Controls the operation that is currently being done
      */
     public static MatrixOperations currentOperation = MatrixOperations.NONE;
 
     /**
-     *  Controls what type of operation is going to be performed.
+     *  Controls what type of operation is going to be performed
      */
     public static OperationTypes currentOperationType = OperationTypes.NONE;
         
     /**
-     * Gets the input for what type of operation will be performed.
+     * Gets the input for what type of operation will be performed
      */
     public static void getInputs() {
         
@@ -44,7 +44,7 @@ public class MainController {
     }
     
     /**
-     * Executes the choice of which operation to perform to a single matrix.
+     * Executes the choice of which operation to perform to a single matrix
      */
     private static void processSingleMatrixInput() {
         MatrixWorker.initialize();
@@ -94,7 +94,7 @@ public class MainController {
     }
     
     /**
-     * Gives the choice of which operation to perform to multiple matrices.
+     * Gives the choice of which operation to perform to multiple matrices
      */
     private static void processMultipleMatricesInput() {
         MatrixWorker.initialize();
@@ -127,7 +127,7 @@ public class MainController {
     }
     
     /**
-     * Inputs for the matrix decomposition options.
+     * Inputs for the matrix decomposition options
      */
     private static void processDecompositionInput() {
         Scanner sc = new Scanner(System.in);
@@ -153,7 +153,7 @@ public class MainController {
     }
     
     /**
-     * Executes the operations that were previously selected to be performed.
+     * Executes the operations that were previously selected to be performed
      */
     public static void executeOperation() {
         if (currentOperation != MatrixOperations.NONE) {
@@ -173,7 +173,7 @@ public class MainController {
     
     /**
      * Gives choices to continue or not
-     * @return
+     * @return boolean value if to exit the application
      */
     public static boolean toFinish() {
         Scanner sc = new Scanner(System.in); //Initialize the instance of Scanner
@@ -184,11 +184,34 @@ public class MainController {
     
     /**
      * Gets scalar input.
-     * @return
+     * @return number entered by user
      */
     private static Number getScalarInput() {
         Scanner sc = new Scanner(System.in); //Initialize the instance of Scanner
         System.out.print("Enter the scalar value: "); // Ask user to enter scalar value
         return sc.nextInt();
+    }
+
+    /**
+     * Executes main scenario of application
+     */
+    static void executeMainRunner() {
+        Printer.displayWelcomeMessage();
+        Printer.displayPrimaryOptions();
+        Scanner sc = new Scanner(System.in);
+        String option = sc.nextLine();
+        switch(option) {
+            case "1":
+                MainController.currentOperationType = OperationTypes.UNARY;
+                break;
+            case "2":
+                MainController.currentOperationType = OperationTypes.BINARY;
+                break;
+            default:
+                MainController.currentOperationType = OperationTypes.NONE;
+                break;
+        }
+        MainController.getInputs();
+        MainController.executeOperation();
     }
 }

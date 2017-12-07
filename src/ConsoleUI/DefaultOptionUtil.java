@@ -6,13 +6,13 @@
 package ConsoleUI;
 
 /**
- * Entity that displays menu options to the user for executing, exiting and going back.
+ * Entity that displays menu options to the user for executing, exiting and going back
  * @author AlekseyKachan
  */
 public class DefaultOptionUtil {
 
     /**
-     * Displays options to the user.
+     * Process default options
      * @param option
      */
     public static void execute(String option) {

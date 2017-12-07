@@ -6,19 +6,20 @@
 package MatrixWorkers;
 
 import Data.Matrix;
+import Helpers.ResultEntities.NumberResult;
 
 /**
- * Determination class executable.
+ * Determination class executable
  * @author Rodrigo Diaz M.
  */
 public class Determinator {
     
     /**
      * Executes determination operations
-     * @param matrix
-     * @return
+     * @param matrix to get determinate for
+     * @return result entity for numbers
      */
-    public Number executeDetermination(Matrix matrix){
-        return 0;
+    public NumberResult execute(Matrix matrix){
+        return null;
     }
 }

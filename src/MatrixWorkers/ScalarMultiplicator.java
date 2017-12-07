@@ -10,17 +10,17 @@ import Data.MatrixElement;
 import Helpers.ResultEntities.MatrixResult;
 
 /**
- * Scalar Multiplication class executable.
+ * Scalar Multiplication class executable
  * @author Rodrigo Diaz M.
  */
 
 public class ScalarMultiplicator {
 
     /**
-     * Executes scalar multiplications.
-     * @param matrix
-     * @param scalarValue
-     * @return
+     * Executes scalar multiplications
+     * @param matrix - matrix multiplier
+     * @param scalarValue - scalar multiplier
+     * @return result entity for matrices
      */
     public static MatrixResult execute(Matrix matrix, double scalarValue){
         MatrixResult result = new MatrixResult();

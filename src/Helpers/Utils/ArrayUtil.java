@@ -6,15 +6,15 @@
 package Helpers.Utils;
 
 /**
- * Utility for array operations.
+ * Utility for array operations
  * @author AlekseyKachan
  */
 public class ArrayUtil {
 
     /**
-     * Gets arrays length.
-     * @param array
-     * @return
+     * Gets arrays length
+     * @param array - entity to work with
+     * @return integer value of amount of not null values in array
      */
     public static int getArraysLength(Object[] array) {
         int counter = 0;
