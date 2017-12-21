@@ -146,7 +146,6 @@ public class Matrix {
      */
     public boolean setZeroElement(int rowIndex, int columnIndex) {
         return this.setElement(rowIndex, columnIndex, 0);
-
     }
     
     /**
