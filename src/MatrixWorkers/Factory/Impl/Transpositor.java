@@ -3,24 +3,35 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package MatrixWorkers;
+package MatrixWorkers.Factory.Impl;
 
 import Data.Matrix;
 import Data.MatrixElement;
 import Helpers.ResultEntities.MatrixResult;
+import MatrixWorkers.Factory.Abstract.Worker;
+import java.util.ArrayList;
 
 /**
  * Transposition class executable.
  * @author AlekseyKachan
  */
-public class Transpositor {
+public class Transpositor extends Worker {
+
+    /**
+     * Creates alias of Transpositor entity
+     * @param matrixParameters. List of matrix parameters
+     */
+    public Transpositor(ArrayList<Matrix> matrixParameters) {
+        super(matrixParameters);
+    }
     
     /**
      * Executes matrix transposition
-     * @param matrix - matrix to be transposed
      * @return result entity for matrices
      */
-    public static MatrixResult execute(Matrix matrix) {
+    @Override
+    public MatrixResult execute() {
+        Matrix matrix = this.getMatrixParameters().get(0);
         MatrixResult result = new MatrixResult();
         Matrix resultMatrix = new Matrix(matrix.getColumnCount(), matrix.getRowCount());
         for(int rowIndex = 0; rowIndex < resultMatrix.getRowCount(); rowIndex++) {

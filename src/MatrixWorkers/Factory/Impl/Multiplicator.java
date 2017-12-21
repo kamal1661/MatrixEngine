@@ -3,25 +3,36 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package MatrixWorkers;
+package MatrixWorkers.Factory.Impl;
 
 import Data.Matrix;
 import Data.MatrixElement;
 import Helpers.ResultEntities.MatrixResult;
+import MatrixWorkers.Factory.Abstract.Worker;
+import java.util.ArrayList;
 
 /**
  * Multiplication class executable
  * @author Rodrigo Diaz M.
  */
-public class Multiplicator {
+public class Multiplicator extends Worker {
+
+    /**
+     * Creates alias of Multiplicator entity
+     * @param matrixParameters. List of matrix parameters
+     */
+    public Multiplicator(ArrayList<Matrix> matrixParameters) {
+        super(matrixParameters);
+    }
     
     /**
      * Executes multiplications
-     * @param firstMatrix - first multiplier
-     * @param secondMatrix - second multiplier
      * @return result entity for matrices
      */
-    public static MatrixResult execute(Matrix firstMatrix, Matrix secondMatrix){
+    @Override
+    public MatrixResult execute(){
+        Matrix firstMatrix = this.getMatrixParameters().get(0);
+        Matrix secondMatrix = this.getMatrixParameters().get(1);
         MatrixResult result = new MatrixResult();
         if (firstMatrix.getColumnCount() == secondMatrix.getRowCount()) {
             Matrix resultMatrix = new Matrix(firstMatrix.getRowCount(), secondMatrix.getColumnCount());
@@ -50,6 +61,6 @@ public class Multiplicator {
         }
         
         return result;
-    }   
+    }
 }    
 

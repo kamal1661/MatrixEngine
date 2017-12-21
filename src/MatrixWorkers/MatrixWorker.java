@@ -10,21 +10,25 @@ import Helpers.Enums.MatrixOperations;
 import Helpers.ResultEntities.MatrixResult;
 import Helpers.ResultEntities.ValueResult;
 import Helpers.Utils.ArrayUtil;
+import MatrixWorkers.Factory.Abstract.Worker;
+import MatrixWorkers.Factory.MatrixWorkerFactory;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * Entity that performs matrices operations
  * @author AlekseyKachan
  */
 public class MatrixWorker {
-    private static Matrix[] matrices;
-    private static Number[] scalarValues;
+    private static Matrix[] matrixParameters;
+    private static Number[] scalarParameters;
     
     /**
      * Initializes matrix worker
      */
     public static void initialize() {
-        matrices = new Matrix[2];
-        scalarValues = new Number[10];
+        matrixParameters = new Matrix[2];
+        scalarParameters = new Number[10];
     }
     
     /**
@@ -32,7 +36,7 @@ public class MatrixWorker {
      * @return array of matrices
      */
     public static Matrix[] getMatrices() {
-        return matrices;
+        return matrixParameters;
     }
     
     /**
@@ -40,7 +44,7 @@ public class MatrixWorker {
      * @param matrix to be added
      */
     public static void addMatrix(Matrix matrix) {
-        matrices[ArrayUtil.getArraysLength(matrices)] = matrix;
+        matrixParameters[ArrayUtil.getArraysLength(matrixParameters)] = matrix;
     }
     
     /**
@@ -48,7 +52,7 @@ public class MatrixWorker {
      * @param number to be added
      */
     public static void addScalarValue(Number number) {
-        scalarValues[ArrayUtil.getArraysLength(scalarValues)] = number;
+        scalarParameters[ArrayUtil.getArraysLength(scalarParameters)] = number;
     }
     
     /**
@@ -57,40 +61,12 @@ public class MatrixWorker {
      * @return valued result entity
      */
     public static ValueResult executeOperation(MatrixOperations operation) {
-        switch(operation) {
-            case ELEVATE_MATRIX:
-                break;
-            case FIND_DETERMINANT:
-                break;
-            case CHECK_NOT_DEGENERTE:
-                break;
-            case FIND_INVERSE:
-                break;
-            case FIND_MINOR:
-                break;
-            case FIND_RANK:
-                break;
-            case DECOMPOSE:
-                break;
-            case SCALAR_MULTIPLICATION:
-                return ScalarMultiplicator.execute(matrices[0], scalarValues[0].doubleValue());
-            case GET_SUBMATRIX:
-                break;
-            case TRANSPOSE:
-                return Transpositor.execute(matrices[0]);
-            case MULTIPLICATION:
-                return Multiplicator.execute(matrices[0], matrices[1]);
-            case DIVISION:
-                break;
-            case ADDITION:
-                break;
-            case SUBSTRACTION:
-                break;
-            case CHECK_COMMUTATIVE:
-                break;
-            default:
-                return new MatrixResult(false, "No such operation", null);
+        Worker worker = MatrixWorkerFactory.getMatrixWorker(operation, new ArrayList<>(Arrays.asList(matrixParameters)), new ArrayList<>(Arrays.asList(scalarParameters)));
+        if (worker != null) {
+            return worker.execute();
         }
-        return null;
+        else {
+            return new MatrixResult(false, "No such operation", null);
+        }
     }
 }
