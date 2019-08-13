@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Helper.ResultEntities;
+package Helpers.ResultEntities;
 
 /**
  * Entity that shows the result of some action
@@ -11,29 +11,30 @@ package Helper.ResultEntities;
  */
 public class BaseResult {
     /*
-     * Shows if the result action as successful
+     * Shows if the result action is successful
      */
-    protected boolean p_isSuccess;
+    private boolean isSuccess;
+    
     /*
      * Shows the error message in case of unsuccessful action
      */
-    protected String p_message; 
+    private String message; 
     
     /**
      * Creates alias of Result entity with fields
      * @param isSuccess. Shows if the result action as successful
      * @param message. Shows the error message in case of unsuccessful action 
      */
-    public void BaseResult(boolean isSuccess, String message)
+    public BaseResult(boolean isSuccess, String message)
     {
-        this.p_isSuccess = isSuccess;
-        this.p_message = message;
+        this.isSuccess = isSuccess;
+        this.message = message;
     }
     
     /**
      * Creates empty alias of Result entity
      */
-    public void BaseResult() { 
+    public BaseResult() { 
     }
 
     /**
@@ -41,7 +42,7 @@ public class BaseResult {
      * @return boolean value of result
      */
     public boolean isSuccess() {
-        return p_isSuccess;
+        return this.isSuccess;
     }
 
     /**
@@ -49,7 +50,7 @@ public class BaseResult {
      * @param isSuccess. The success of action
      */
     public void setIsSuccess(boolean isSuccess) {
-        this.p_isSuccess = isSuccess;
+        this.isSuccess = isSuccess;
     }
 
     /**
@@ -57,7 +58,7 @@ public class BaseResult {
      * @return error string of action
      */
     public String getMessage() {
-        return p_message;
+        return this.message;
     }
 
     /**
@@ -65,6 +66,6 @@ public class BaseResult {
      * @param message. Error string of action
      */
     public void setMessage(String message) {
-        this.p_message = message;
+        this.message = message;
     }
 }

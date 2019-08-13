@@ -3,19 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Helper.ResultEntities;
+package Helpers.ResultEntities;
 
 /**
  * Entity that shows the result of some action with some returning value(s)
  * @author AlekseyKachan
  * @param <ResultType>. Data type of the returning value
  */
-public class Result<ResultType> extends BaseResult {
+public abstract class ValueResult<ResultType> extends BaseResult {
 
     /**
      * Returning action result
      */
-    protected ResultType p_result;
+    private ResultType result;
 
     /**
      * Creates alias of Result entity with fields
@@ -23,18 +23,22 @@ public class Result<ResultType> extends BaseResult {
      * @param message. Shows the error message in case of unsuccessful action 
      * @param result. The returning result of action
      */
-    public Result(boolean isSuccess, String message, ResultType result) {
-        this.p_isSuccess = isSuccess;
-        this.p_message = message;
-        this.p_result = result;
+    public ValueResult(boolean isSuccess, String message, ResultType result) {
+        super(isSuccess, message);
+        this.result = result;
     }
+    
+    /**
+     * Creates empty alias of Result entity
+     */
+    public ValueResult() {}
 
     /**
      * Get the result of action
      * @return the result of action
      */
     public ResultType getResult() {
-        return p_result;
+        return this.result;
     }
 
     /**
@@ -42,6 +46,6 @@ public class Result<ResultType> extends BaseResult {
      * @param result. Returning result of action
      */
     public void setResult(ResultType result) {
-        this.p_result = result;
+        this.result = result;
     }
 }
